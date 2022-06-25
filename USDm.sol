@@ -1,27 +1,30 @@
-/**
- * SPDX-License-Identifier: MIT
- *
- * Copyright (c) 2018-2020 CENTRE SECZ
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWA
- ';/////RE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
+/*
+    USDm is a digital stable coin backed by USDT, will provide individuals and organizations with a
+    robust and decentralized method of exchanging kyat fiat currency that is universally
+    exchangeable throughout the world. The USDm on the blockchains provides an auditable and
+    cryptographically secured global ledger.
+
+    USDm stable coin backing by USDT provides market participants to take advantage of blockchain
+    technology, along with embedded consensus systems, to transact in familiar, less volatile
+    currencies and assets compared to Myanmar kyat and lowering the associated kyat exchange
+    conversion costs. To provide accountability and ensure stability and acceptability of USDm,
+    GCex will maintain a one-to-one reserve ratio between USDm and USDT, and its associated
+    Myanmar Central Bank official fiat currency kyat to US dollar. USDm will use BNB or Polygon
+    blockchain, and other audit methods to prove that issued tokens are fully backed and always
+    reserved.
+
+    USDm is governed by GoldChain Exchange.
+
+    website: https://www.goldchainex.com/
+    Exchange: https://www.gcex.lt/
+    Telegram: https://t.me/GoldchainExchangeCommunity
+    Twitter: https://twitter.com/gcexlt/
+    Facebook: https://www.facebook.com/gcex.lt
+    Discord: https://discord.com/invite/2pTygTgyWb
+
  */
+
+//SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.1;
 
@@ -47,7 +50,7 @@ contract USDm is AbstractUSDm, Ownable, Pausable, Blacklistable, Rescuable {
     mapping(address => uint256) internal balances;
     mapping(address => mapping(address => uint256)) internal allowed;
     uint256 internal totalSupply_ = 0;
-    uint256 public maxTotalSupply = 1 * 1e9 * 1e18;
+    uint256 public maxTotalSupply = 1 * 1e12 * 1e18; // 1 Trillion Max supply that can ever be minted
     mapping(address => bool) internal minters;
     mapping(address => uint256) internal minterAllowed;
 
